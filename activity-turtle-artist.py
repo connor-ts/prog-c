@@ -17,7 +17,7 @@ t.speed(0)
 t.penup()
 t.goto(-400, -150)
 t.pendown()
-t.color("forestgreen") # leaf color
+t.color("forestgreen") # ground color
 t.begin_fill()
 for w in range(2): 
     t.forward(800)
