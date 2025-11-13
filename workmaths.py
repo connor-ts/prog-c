@@ -1,8 +1,10 @@
-#
-#
-# 
+# Connor ter Stege
+# november 12 
+# something to do with math or numbers i think i kinda forgot
 
-# 
+def main():
+    __name__ = "__main__"
+    main():
     
 # asks for how far you need to go and how fast you will be going roughly
 # responds with the estimated time to get there
