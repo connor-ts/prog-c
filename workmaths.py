@@ -3,17 +3,12 @@
 # 
 
 # 
-
-def main():
-
-    __name__ = "__main__"
-    main() 
     
 # asks for how far you need to go and how fast you will be going roughly
 # responds with the estimated time to get there
 # estimate traffic based on time of day asking the user what time and day it is,
-# if its a friday is going to be longer than a 2am on a tuesday
-# print the response in days, hours, minutes format
+# if its a friday is going to be longer than a 2am on a tuesday because of traffic
+# prints the response in days, hours, minutes format
 
 def travel_time():
     print("Welcome to the Travel Time Estimator!")
