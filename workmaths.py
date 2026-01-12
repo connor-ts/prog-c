@@ -2,6 +2,9 @@
 # november 12 
 # something to do with math or numbers i think i kinda forgot
 
+import random
+import time
+
 def main():
     pass
     if __name__ == "__main__":
@@ -13,32 +16,71 @@ def main():
 # if its a friday is going to be longer than a 2am on a tuesday because of traffic
 # prints the response in days, hours, minutes format
 
-def travel_time():
-    print("Welcome to the Travel Time Estimator!")
-    distance = float(input("Enter the distance you need to travel (in miles): "))
-    speed = float(input("Enter your estimated average speed (in miles per hour): "))
-    estimated_time = distance / speed
-    time_of_day = input("What time of day will you be traveling? (morning/afternoon/evening/night): ").strip("!.,;:?/']").lower()
-    day_of_week = input("What day of the week will you be traveling? (weekday/weekend): ").strip("!.,;:?/']").lower()
+def color_judges():
 
-    traffic_delay = 0
-    if time_of_day in ["morning", "evening"] and day_of_week == "weekday":
-        traffic_delay = 0.5 
-    elif time_of_day == "afternoon" and day_of_week == "weekday":
-        traffic_delay = 0.25 
-    elif day_of_week == "weekend":
-        traffic_delay = 0.1  
+    colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown", "black", "white", "gray"]
+    judges = 5
+    scores = {}
 
-    total_time = estimated_time + traffic_delay
+    user_colors = []
+    while len(user_colors) < 5:
+        color = input("gib color: ").strip().lower()
+        if color in user_colors:
+            print("be original smh.")
+        elif color not in colors:
+            print("we dont know ;p.")
+            user_colors.append(color)
+        else:
+            user_colors.append(color)
 
-    if speed <= 0:
-        print("Speed must be greater than zero.")
-        return
-    
-    days = int(total_time // 24)
-    hours = int(total_time % 24)
-    minutes = int((total_time * 60) % 60)
+    for color in user_colors:
+        scores[color] = []
+        for judge in range(judges):
 
-    print(f"Estimated travel time: {days} days, {hours} hours, and {minutes} minutes.")
+            time.sleep(1)
+            if color not in colors:
+                score = random.randint(0, 4)  # Lower score for unknown colors
+            else:
+                if color in ["red", "orange", "yellow"]:
+                    score = random.randint(7, 10)  # Warmer colors get higher scores
+                else:
+                    score = random.randint(0, 6)  # Cooler colors get lower scores
+            scores[color].append(score)
+            print(f"judge {judge + 1} is thinkying {color}...")
+            time.sleep(0.5)
+            print(f"judge {judge + 1} rated {color} a {score}.")
+            time.sleep(1)
 
-travel_time()
+    print("\nFinal Scores:")
+    for color, color_scores in scores.items():
+        average_score = sum(color_scores) / len(color_scores)
+        print(f"{color.capitalize()}: avg score = {average_score:.2f} (scores: {color_scores})")
+
+color_judges()
+
+
+# make a program called mcdoland that asks if u want a burger = 5$  and fries = 3$ and outputs the total cost with 14% tax
+
+def mcdoland():
+    print("burger is money and the other one is also money.")
+    burger_price = 5.00
+    fries_price = 3.00
+    tax_rate = 0.14
+
+    want_burger = input("Do you want a burger? (yes/no): ").strip().lower()
+    want_fries = input("Do you want fries? (yes/no): ").strip().lower()
+
+    total_cost = 0.0
+
+    if want_burger == "yes":
+        total_cost += burger_price
+    if want_fries == "yes":
+        total_cost += fries_price
+    else:
+        print("ok no food for u")
+        time.sleep(1)
+        
+    tax_amount = total_cost * tax_rate
+    total_cost += tax_amount
+
+    print(f"Your total cost including tax is: ${total_cost:.2f}")

@@ -1,24 +1,23 @@
-# notes1
-# connor ter stege
+# Notes - Intro
+# 16 Sept
+# Connor ter Stege
 
-import time 
+# Create an algorithm to solve a problem
+# Problem: Create a chatbot
+# megpt
 
-print("HELLO, IM SCREAMING BOT")
-time.sleep(1)
-name = input("WHATS YOUR NAME? ")
-time.sleep(2)
-print(f"NICE TO MEET YOU {name}!")
-time.sleep(1)
-input("WHATS YOUR FAVORITE SPORT? ")
-time.sleep(1)
-print("Awesome")
-time.sleep(2)
-input("WHATS YOUR FAVORITE FOOD? ")
-time.sleep(2)
-print("COOL")
-time.sleep(1)
-input("WHATS YOUR FAVORITE MOVIE? ")
-time.sleep(1)
-print("NICE")
-time.sleep(1)
-print("IT WAS NICE TO MEET YOU... BYE")
+# 1. Greet the user with a predetermined statement
+greeting = "Hello, I am a chatbot."
+
+# 1a.
+print(greeting)
+
+# 2. Introduce the bot
+print("My name is MeGPT")
+print("I'm not like the other guy.")
+print("I'm completely deterministic")
+
+#3 Wow the user with some math
+print("I bet you dont know what 8*8 is")
+print("I can do it")
+print(f"8x8 is actually {8*8}")

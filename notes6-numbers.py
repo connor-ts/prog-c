@@ -40,11 +40,42 @@ vote_listed_choices()
     # give raw scores for each place
     # gve scores as percentages based on the number of responses for each place
 
-def main(): 
-    pass 
+def version2(): 
+    __name__ = "__main__"
+    bubble_tea_places = []
+    for i in range(10):
+        place = input(f"User {i+1}, enter your favorite bubble tea place: ")
+        bubble_tea_places.append(place)
+    tally = {}
+    for place in bubble_tea_places:
+        if place in tally:
+            tally[place] += 1
+        else:
+            tally[place] = 1
+    total_votes = len(bubble_tea_places)
+    print("\nResults:")
+    for place, count in tally.items():
+        percentage = (count / total_votes) * 100
+        print(f"{place}: {count} votes ({percentage:.2f}%)")
+version2()
 
-if __name__ == "__main__":
-    main()
+# some chip thingy about chip quality and crispness and print the avg rating of chips
 
+def chip_rater():
+    print("take one chip from the bag and eat is mindfully.")
+    print("Now rate the chip based on the following questions:")
+    questions = [
+        "On a scale of 0-10, how crispy are the chips? ",
+        "On a scale of 0-10, how flavorful are the chips? ",
+        "On a scale of 0-10, how fresh do the chips taste? "]
+    ratings = []
+    for question in questions:
+        rating = float(input(question))
+        ratings.append(rating)   
+    for question in questions:
+            print (question) 
+            rating = float(input()).strip("!.,?;:'\"") 
+    total_rating += rating  
 
- 
+chip_rater()
+
